@@ -656,7 +656,7 @@ arm_freq=800
 ##
 ##     Default 250.
 ##
-gpu_freq=250
+#gpu_freq=250
 
 ## core_freq
 ##     Frequency of GPU processor core in MHz. It has an impact on ARM
@@ -664,7 +664,7 @@ gpu_freq=250
 ##
 ##     Default 250.
 ##
-#core_freq=250
+core_freq=250
 
 ## core_freq_min
 ##     Minimum frequency of GPU processor core in MHz (used for dynamic
