@@ -1,4 +1,4 @@
-####################################################################
+ ####################################################################
 ##  Raspberry Pi Configuration Settings for PiBang Linux
 ##
 ##  Revision 1, 2012/12/26
@@ -458,7 +458,7 @@
 ##
 ##     Default 64
 ##
-#gpu_mem=128
+#gpu_mem=64
 
 ## gpu_mem_256
 ##     GPU memory allocation in MB for 256MB board revision.
