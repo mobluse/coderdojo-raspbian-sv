@@ -46,6 +46,7 @@
 ##              subcarrier
 ##
 #sdtv_mode=0
+sdtv_mode=2
 
 ## sdtv_aspect
 ##     defines the aspect ratio for composite output
