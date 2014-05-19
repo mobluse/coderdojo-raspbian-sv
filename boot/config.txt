@@ -1,7 +1,7 @@
  ####################################################################
 ##  Raspberry Pi Configuration Settings for PiBang Linux
 ##
-##  Revision 2, 2013/07/18
+##  Revision 3, 2014-05-19
 ##
 ##  Details taken from the eLinux wiki
 ##  For up-to-date information please refer to wiki page.
