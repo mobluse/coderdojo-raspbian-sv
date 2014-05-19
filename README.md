@@ -11,7 +11,7 @@ http://elinux.org/RPi_config.txt
 Also contains installation scripts for BSDTar, Links, Rhino, RLWrap, and Minecraft Pi Edition (MCPI) v0.1.1.
 
 See "Extend Minecraft Pi Edition using JavaScript via Java":  
-http://www.raspberrypi.org/forums/viewtopic.php?f=49&t=73473&p=528116
+http://www.raspberrypi.org/forums/viewtopic.php?p=552802#p552802
 
 ##Installation##
 
