@@ -17,5 +17,3 @@ http://www.raspberrypi.org/forums/viewtopic.php?f=49&t=73473&p=528116
 
 Install by using this oneliner in the home directory:  
 curl -L -o master.zip https://github.com/mobluse/coderdojo-raspbian-sv/archive/master.zip; unzip -jo master.zip coderdojo-raspbian-sv-master/upgrade.sh; . upgrade.sh
-
-You may be asked for the sudo password.
