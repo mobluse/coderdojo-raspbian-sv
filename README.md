@@ -5,10 +5,13 @@ This script simplifies installing several similar Raspberry Pi systems.
 
 Contains the commented config.txt file for the Raspberry Pi further developed for a CoderDojo in Lund, Sweden.
 
-Details taken from the eLinux wiki:
+Details taken from the eLinux wiki:  
 http://elinux.org/RPi_config.txt
 
-Also contains installation scripts for BSDTar, Links, and Minecraft Pi Edition (MCPI) v0.1.1.
+Also contains installation scripts for BSDTar, Links, Rhino, RLWrap, and Minecraft Pi Edition (MCPI) v0.1.1.
+
+See "Extend Minecraft Pi Edition using JavaScript via Java":  
+http://www.raspberrypi.org/forums/viewtopic.php?f=49&t=73473&p=528116
 
 ##Installation##
 
