@@ -8,10 +8,17 @@ Contains the commented config.txt file for the Raspberry Pi further developed fo
 Details taken from the eLinux wiki:  
 http://elinux.org/RPi_config.txt
 
-Also contains installation scripts for BSDTar, Links, Rhino, RLWrap, and Minecraft Pi Edition (MCPI) v0.1.1.
+Also contains installation scripts for BSDTar, Minecraft Pi Edition (MCPI) v0.1.1, Links, Rhino, RLWrap,
+TightVNC-server, and XRDP.
 
 See "Extend Minecraft Pi Edition using JavaScript via Java":  
 http://www.raspberrypi.org/forums/viewtopic.php?p=552802#p552802
+
+See "RPi VNC Server":
+http://elinux.org/RPi_VNC_Server
+
+See "Enabling Remote Desktop Access with xrdp on a Raspberry Pi":
+http://www.maketecheasier.com/enabling-remote-desktop-access-on-raspberry-pi/
 
 ##Installation##
 
