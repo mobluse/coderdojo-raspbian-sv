@@ -11,14 +11,14 @@ TightVNC-Server, and XRDP.
 See "Extend Minecraft Pi Edition using JavaScript via Java":  
 http://www.raspberrypi.org/forums/viewtopic.php?p=552802#p552802
 
-See "RPi VNC Server":  
-http://elinux.org/RPi_VNC_Server
-
 See "Enabling Remote Desktop Access with xrdp on a Raspberry Pi":  
 http://www.maketecheasier.com/enabling-remote-desktop-access-on-raspberry-pi/
 
-See "RPi XRDP Server":
+See "RPi XRDP Server":  
 http://elinux.org/RPi_XRDP_Server
+
+See "RPi VNC Server":  
+http://elinux.org/RPi_VNC_Server
 
 ##Installation##
 
