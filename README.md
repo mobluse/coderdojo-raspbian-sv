@@ -22,5 +22,22 @@ http://elinux.org/RPi_VNC_Server
 
 ##Installation##
 
+The next three paragraphs may be skipped if you have a new SD-card.
+
+Use this to list partitions:  
+sudo fdisk -l
+
+Use Parted to remove partitions from the SD-card you want to format and create a new partition.
+
+This names and formats the SD-card:  
+sudo mkdosfs -n dojopi1 -F 32 -I /dev/sde1
+
+[NOOBS](http://www.raspberrypi.org/downloads/) was streamed down to the SD-card using:  
+wget -qO- http://downloads.raspberrypi.org/NOOBS_latest | bsdtar -xvf- -C /dev/sde1
+
+The Raspberry Pi was installed with Raspbian using NOOBS.
+
+Then configured using Raspi-Config. In the future this configuration should be built-in to the script.
+
 Install by using this oneliner in the home directory:  
 curl -L -o master.zip https://github.com/mobluse/coderdojo-raspbian-sv/archive/master.zip; unzip -jo master.zip coderdojo-raspbian-sv-master/upgrade.sh; . upgrade.sh
