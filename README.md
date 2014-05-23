@@ -29,15 +29,16 @@ sudo fdisk -l
 
 Use Parted to remove partitions from the SD-card you want to format and create a new partition.
 
-This names and formats the SD-card:  
+Format and name the SD-card:  
 sudo mkdosfs -n dojopi1 -F 32 -I /dev/sde1
+(Change sde1 to your partition and the name dojopi1 to what you like.)
 
-[NOOBS](http://www.raspberrypi.org/downloads/) was streamed down to the SD-card using:  
+Stream [NOOBS](http://www.raspberrypi.org/downloads/) down to the SD-card using:  
 wget -qO- http://downloads.raspberrypi.org/NOOBS_latest | bsdtar -xvf- -C /dev/sde1
 
-The Raspberry Pi was installed with Raspbian using NOOBS.
+Install Raspbian from NOOBS.
 
-Then configured using Raspi-Config. In the future this configuration should be built-in to the script.
+Configure using Raspi-Config. In the future this configuration should be built-in to the script.
 
-Install by using this oneliner in the home directory:  
+Install the rest of the programs by using this oneliner in the home directory:  
 curl -L -o master.zip https://github.com/mobluse/coderdojo-raspbian-sv/archive/master.zip; unzip -jo master.zip coderdojo-raspbian-sv-master/upgrade.sh; . upgrade.sh
