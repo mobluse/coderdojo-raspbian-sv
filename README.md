@@ -6,19 +6,20 @@ This script simplifies installing several similar Raspberry Pi systems.
 Contains the commented config.txt file for the Raspberry Pi further developed for a CoderDojo in Lund, Sweden.
 
 Also contains installation scripts for BSDTar, Minecraft Pi Edition (MCPI) v0.1.1, Links, Rhino, RLWrap,
-TightVNC-Server, and XRDP.
+TightVNC-Server, XRDP, and BYOB.
 
 See "Extend Minecraft Pi Edition using JavaScript via Java":  
 http://www.raspberrypi.org/forums/viewtopic.php?p=552802#p552802
 
 See "Enabling Remote Desktop Access with xrdp on a Raspberry Pi":  
 http://www.maketecheasier.com/enabling-remote-desktop-access-on-raspberry-pi/
-
 See "RPi XRDP Server":  
 http://elinux.org/RPi_XRDP_Server
-
 See "RPi VNC Server":  
 http://elinux.org/RPi_VNC_Server
+
+See "Installing BYOB in Raspbian":  
+http://www.raspberrypi.org/forums/viewtopic.php?f=77&t=62781
 
 ##Installation##
 
