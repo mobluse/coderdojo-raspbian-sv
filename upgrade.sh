@@ -22,3 +22,4 @@ sudo mv x64 /usr/local/bin/
 # x64 -sdlbitdepth 8
 # Save settings within VICE (F12/Settings management/Save current settings), then start with 
 # x64
+wget 'http://c64.orbin.se/Comal 80 (1985)(Commodore)[a].crt'
