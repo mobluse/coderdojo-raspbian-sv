@@ -20,4 +20,5 @@ sudo mv vice /usr/local/lib/
 chmod +x x64
 sudo mv x64 /usr/local/bin/
 # x64 -sdlbitdepth 8
-# Save settings within VICE, then start with x64
+# Save settings within VICE (F12/Settings management/Save current settings), then start with 
+# x64
