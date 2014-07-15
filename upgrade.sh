@@ -4,12 +4,41 @@ sudo apt-get update
 sudo apt-get -y upgrade
 sudo apt-get install bsdtar links rhino rlwrap tightvncserver xrdp avahi-daemon avahi-autoipd freepats
 
+cd
+
 # See http://pi.minecraft.net/ & http://www.minecraftforum.net/forum/216-minecraft-pi-edition/
 rm -rf mcpi
 wget -qO- https://s3.amazonaws.com/assets.minecraft.net/pi/minecraft-pi-0.1.1.tar.gz | bsdtar -xvf- -C ~
 
+# Copy Minecraft Pi shortcut on Desktop
+if [ -f ~/Desktop/mcpi.desktop ]; then
+  echo -e "\n\033[33m\033[1mMinecraft Pi shortcut on Desktop exists. Skipped copying.\033[00m\n"
+else
+  echo -e "\n\033[36m\033[1mCopying Minecraft Pi shortcut on Desktop...\033[00m\n"
+  wget -P ~/Desktop http://scratch2mcpi.github.io/mcpi.desktop
+fi
+
+# Download Python samples
+echo -e "\n\033[36m\033[1mDownloading Python samples...\033[00m\n"
+if [ -f ~/mcpi/api/python/sphere.py ]; then
+  echo -e "\n\033[33m\033[1msphere.py exists. Skipped downloading.\033[00m\n"
+else
+  wget -P ~/mcpi/api/python http://scratch2mcpi.github.io/python_samples/sphere.py
+  chmod a+x ~/mcpi/api/python/sphere.py
+fi
+
+echo -e "\n\033[32m\033[1mInstallation of minecraft-pi is completed.\033[00m\n"
+
+wget -qO- http://scratch2mcpi.github.io/install.sh | sh
+if [ -f ~/Documents/Scratch\ Projects/mcpi_double_rainbow.sb ]; then
+  echo -e "\n\033[33m\033[1mmcpi_double_rainbow.sb exists. Skipped downloading.\033[00m\n"
+else
+  wget -O ~/Documents/Scratch\ Projects/mcpi_double_rainbow.sb http://projects.scratch.mit.edu/internalapi/project/13703270/get/
+fi
+
+
 # See http://www.raspberrypi.org/forums/viewtopic.php?p=503683#p503683
-wget https://dl.dropbox.com/s/zgkq2jw9o9wbava/installBYOB.sh -O installBYOB.sh
+wget https://dl.dropbox.com/s/zgkq2jw9o9wbava/installBYOB.sh
 sudo bash installBYOB.sh
 
 # See http://www.raspberrypi.org/forums/viewtopic.php?f=78&t=69420&p=551155
