@@ -16,7 +16,7 @@ http://www.maketecheasier.com/enabling-remote-desktop-access-on-raspberry-pi/
 See "RPi XRDP Server":  
 http://elinux.org/RPi_XRDP_Server  
 See "RPi VNC Server":  
-http://elinux.org/RPi_VNC_Server
+http://elinux.org/RPi_VNC_Server  
 In Ubuntu Linux I use Remmina Remote Desktop Client for RDP.
 
 See "Installing BYOB in Raspbian":  
