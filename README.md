@@ -5,8 +5,8 @@ This script simplifies installing several similar Raspberry Pi systems.
 
 Contains the commented config.txt file for the Raspberry Pi further developed for a CoderDojo in Lund, Sweden.
 
-Also contains installation scripts for BSDTar, Minecraft Pi Edition (MCPI) v0.1.1, Links, Rhino, RLWrap,
-TightVNC-Server, XRDP, and BYOB.
+Also contains installation scripts for BSDTar, Minecraft Pi Edition (MCPI) v0.1.1, Scratch2MCPI, Links, Rhino, RLWrap,
+TightVNC-Server, XRDP, BYOB, Avahi, Commodore 64 with Comal 80, ABC 80 with Snake.
 
 See "Extend Minecraft Pi Edition using JavaScript via Java":  
 http://www.raspberrypi.org/forums/viewtopic.php?p=552802#p552802
@@ -17,9 +17,12 @@ See "RPi XRDP Server":
 http://elinux.org/RPi_XRDP_Server  
 See "RPi VNC Server":  
 http://elinux.org/RPi_VNC_Server
+In Ubuntu Linux I use Remmina Remote Desktop Client for RDP.
 
 See "Installing BYOB in Raspbian":  
 http://www.raspberrypi.org/forums/viewtopic.php?f=77&t=62781
+
+Avahi is used with Bonjour from iTunes in Windows, but is built-in to Mac OS X and Ubuntu Linux. You can extract Bonjour from iTunes using an archive manager that handles rar-files, e.g. 7-zip. Use the correct version of iTunes for your x86-processor! i.e. 32-bit or 64-bit.The purpose of Avahi is to configure IP-numbers without a DHCP-server and to be able to use names of computers without a nameserver, e.g. dojopi1.local. This makes it possible to connect a Raspberry Pi to a laptop with a single ethernet-cable or via a simple hub. You can also switch on network sharing and use the computer's Internet connection via WiFi or 3G from the Raspberry Pi.
 
 ##Installation##
 
