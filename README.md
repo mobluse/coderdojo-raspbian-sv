@@ -26,23 +26,28 @@ Avahi is used with Bonjour from iTunes in Windows, but is built-in to Mac OS X a
 
 ##Installation##
 
-The next three paragraphs may be skipped if you have a new SD-card.
+First you install NOOBS on an SD-card. You can use Windows or Mac OS X for this, but below is shown for Raspbian Linux.
+
+The next three paragraphs may be skipped if you have a new, blank SD-card.
 
 Use this to list partitions:  
 sudo fdisk -l
 
-Use Parted to remove partitions from the SD-card you want to format and create a new partition.
+Use parted or fdisk to remove all partitions from the SD-card you want to format and create a new, bootable W95 FAT32 partition.
 
 Format and name the SD-card:  
-sudo mkdosfs -n dojopi1 -F 32 -I /dev/sde1
+sudo mkdosfs -n dojopi1 -F 32 -I /dev/sde1  
 (Change sde1 to your partition and the name dojopi1 to what you like.)
 
-Stream [NOOBS](http://www.raspberrypi.org/downloads/) down to the SD-card using:  
-wget -qO- http://downloads.raspberrypi.org/NOOBS_latest | bsdtar -xvf- -C /dev/sde1
+Remove and insert the USB SD-card reader/writer in order to mount automatically. Use this to find out where it is mounted:  
+mount | grep -i sde1
 
-Install Raspbian from NOOBS.
+Stream [NOOBS](http://www.raspberrypi.org/downloads/) down to the SD-card using:  
+wget -qO- http://downloads.raspberrypi.org/NOOBS_latest | bsdtar -xvf- -C /media/dojopi1/
+
+Install Raspbian from NOOBS. After boot use 1, 2, 3, and 4 to select HDMI, HDMI Safe, PAL, and NTSC, respectively. If you need to select video out again, press and hold shift during boot.  
 
 Configure using Raspi-Config. In the future this configuration should be built-in to the script.
 
-Install the rest of the programs by using this oneliner in the home directory:  
+Install the rest of the programs by using this oneliner in the home directory (requires network):  
 curl -L -o master.zip https://github.com/mobluse/coderdojo-raspbian-sv/archive/master.zip; unzip -jo master.zip coderdojo-raspbian-sv-master/upgrade.sh; . upgrade.sh
