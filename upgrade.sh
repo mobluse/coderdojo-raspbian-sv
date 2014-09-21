@@ -1,4 +1,5 @@
 #!/bin/sh
+sudo cp /boot/config.txt /boot/config.org.txt
 sudo unzip -jo master.zip coderdojo-raspbian-sv-master/boot/config.txt -d /boot
 sudo apt-get update
 sudo apt-get -y upgrade
@@ -7,8 +8,9 @@ sudo apt-get install bsdtar dosfstools links rhino rlwrap tightvncserver xrdp av
 cd
 
 # See http://pi.minecraft.net/ & http://www.minecraftforum.net/forum/216-minecraft-pi-edition/
-rm -rf mcpi
-wget -qO- https://s3.amazonaws.com/assets.minecraft.net/pi/minecraft-pi-0.1.1.tar.gz | bsdtar -xvf- -C ~
+#rm -rf mcpi
+#wget -qO- https://s3.amazonaws.com/assets.minecraft.net/pi/minecraft-pi-0.1.1.tar.gz | bsdtar -xvf- -C ~
+ln -s /opt/raspberry-pi mcpi
 
 # Copy Minecraft Pi shortcut on Desktop
 if [ -f ~/Desktop/mcpi.desktop ]; then
@@ -23,8 +25,8 @@ echo -e "\n\033[36m\033[1mDownloading Python samples...\033[00m\n"
 if [ -f ~/mcpi/api/python/sphere.py ]; then
   echo -e "\n\033[33m\033[1msphere.py exists. Skipped downloading.\033[00m\n"
 else
-  wget -P ~/mcpi/api/python http://scratch2mcpi.github.io/python_samples/sphere.py
-  chmod a+x ~/mcpi/api/python/sphere.py
+  sudo wget -P ~/mcpi/api/python http://scratch2mcpi.github.io/python_samples/sphere.py
+  sudo chmod a+x ~/mcpi/api/python/sphere.py
 fi
 
 echo -e "\n\033[32m\033[1mInstallation of minecraft-pi is completed.\033[00m\n"
