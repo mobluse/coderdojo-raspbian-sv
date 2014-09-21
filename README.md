@@ -5,7 +5,7 @@ This script simplifies installing several similar Raspberry Pi systems.
 
 Contains the commented config.txt file for the Raspberry Pi further developed for a CoderDojo in Lund, Sweden.
 
-Also contains installation scripts for BSDTar, Minecraft Pi Edition (MCPI) v0.1.1, Scratch2MCPI, Links, Rhino, RLWrap,
+Also contains installation scripts for BSDTar, Scratch2MCPI, Links, Rhino, RLWrap,
 TightVNC-Server, XRDP, BYOB, Avahi, Commodore 64 with Comal 80, ABC 80 with Snake.
 
 See "Extend Minecraft Pi Edition using JavaScript via Java":  
@@ -45,9 +45,11 @@ mount | grep -i sde1
 Stream [NOOBS](http://www.raspberrypi.org/downloads/) down to the SD-card using:  
 wget -qO- http://downloads.raspberrypi.org/NOOBS_latest | bsdtar -xvf- -C /media/dojopi1/
 
-Install Raspbian from NOOBS. After boot use 1, 2, 3, and 4 to select HDMI, HDMI Safe, PAL, and NTSC, respectively. If you need to select video out again, press and hold shift during boot.  
+Those who installed NOOBS using other OS continue here.
 
-Configure using Raspi-Config. In the future this configuration should be built-in to the script.
+Boot with keyboard, mouse, and screen. After boot use 1, 2, 3, and 4 to select HDMI, HDMI Safe, PAL, and NTSC, respectively. If you need to select video out again, press and hold Shift during boot. Install Raspbian from NOOBS.  
+
+Configure using Raspi-Config (starts automatically on first boot). Switch on SSH. In the future this configuration should be built-in to the script.
 
 Install the rest of the programs by using this oneliner in the home directory (requires network):  
 curl -L -o master.zip https://github.com/mobluse/coderdojo-raspbian-sv/archive/master.zip; unzip -jo master.zip coderdojo-raspbian-sv-master/upgrade.sh; . upgrade.sh
