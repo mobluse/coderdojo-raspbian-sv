@@ -3,7 +3,7 @@ sudo cp /boot/config.txt /boot/config.org.txt
 sudo unzip -jo master.zip coderdojo-raspbian-sv-master/boot/config.txt -d /boot
 sudo apt-get update
 sudo apt-get -y upgrade
-sudo apt-get install bsdtar dosfstools links rhino rlwrap tightvncserver xrdp avahi-daemon avahi-autoipd freepats
+sudo apt-get -y install bsdtar dosfstools links rhino rlwrap tightvncserver xrdp avahi-daemon avahi-autoipd freepats
 
 cd
 
