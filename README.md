@@ -11,6 +11,8 @@ TightVNC-Server, XRDP, BYOB, Avahi, Commodore 64 with Comal 80, ABC 80 with Snak
 See "Extend Minecraft Pi Edition using JavaScript via Java":  
 http://www.raspberrypi.org/forums/viewtopic.php?p=552802#p552802
 
+One feature of this extension of the original OS is that you can use a laptop as a keyboard, mouse, and screen to a Raspberry Pi. It's better and faster to use a directly connected screen, but we usually don't have access to screens.
+
 See "Enabling Remote Desktop Access with xrdp on a Raspberry Pi":  
 http://www.maketecheasier.com/enabling-remote-desktop-access-on-raspberry-pi/  
 See "RPi XRDP Server":  
@@ -22,7 +24,7 @@ In Ubuntu Linux I use Remmina Remote Desktop Client for RDP.
 See "Installing BYOB in Raspbian":  
 http://www.raspberrypi.org/forums/viewtopic.php?f=77&t=62781
 
-Avahi is used with Bonjour from iTunes in Windows, but is built-in to Mac OS X and Ubuntu Linux. You can extract Bonjour from iTunes using an archive manager that handles rar-files, e.g. 7-zip. Use the correct version of iTunes for your x86-processor! i.e. 32-bit or 64-bit.The purpose of Avahi is to configure IP-numbers without a DHCP-server and to be able to use names of computers without a nameserver, e.g. dojopi1.local. This makes it possible to connect a Raspberry Pi to a laptop with a single ethernet-cable or via a simple hub. You can also switch on network sharing and use the computer's Internet connection via WiFi or 3G from the Raspberry Pi.
+Avahi is used with Bonjour from iTunes in Windows, but is built-in to Mac OS X and Ubuntu Linux. You can extract Bonjour from iTunes using an archive manager that handles rar-files, e.g. 7-zip. Use the correct version of iTunes for your x86-processor! i.e. 32-bit or 64-bit.The purpose of Avahi is to configure IP-numbers without a DHCP-server and to be able to use names of computers without a nameserver, e.g. dojopi1.local. This makes it possible to connect a Raspberry Pi to a laptop with a single ethernet-cable or via a simple hub. You can also switch on network sharing and use the laptop's Internet connection via WiFi or 3G from the Raspberry Pi.
 
 ##Installation##
 
