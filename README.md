@@ -19,7 +19,7 @@ See "RPi XRDP Server":
 http://elinux.org/RPi_XRDP_Server  
 See "RPi VNC Server":  
 http://elinux.org/RPi_VNC_Server  
-In Ubuntu Linux I use Remmina Remote Desktop Client for RDP.
+In Ubuntu Linux I use Remmina Remote Desktop Client for RDP. For Mac OS X [Microsoft Remote Desktop](https://itunes.apple.com/us/app/microsoft-remote-desktop/id715768417) probably works.
 
 See "Installing BYOB in Raspbian":  
 http://www.raspberrypi.org/forums/viewtopic.php?f=77&t=62781
@@ -35,7 +35,7 @@ The next three paragraphs may be skipped if you have a new, blank SD-card.
 Use this to list partitions:  
 sudo fdisk -l
 
-Use parted or fdisk to remove all partitions from the SD-card you want to format and create a new, bootable W95 FAT32 partition.
+Use Parted or FDisk to remove all partitions from the SD-card you want to format and create a new, bootable W95 FAT32 partition.
 
 Format and name the SD-card:  
 sudo mkdosfs -n dojopi1 -F 32 -I /dev/sde1  
