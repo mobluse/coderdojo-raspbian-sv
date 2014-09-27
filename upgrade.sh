@@ -1,6 +1,8 @@
 #!/bin/sh
 cd
-sudo cp /boot/config.txt /boot/config.org.txt
+if [ ! -f /boot/config.org.txt ]; then
+  sudo cp /boot/config.txt /boot/config.org.txt
+fi
 if [ ! -f master.zip ]; then
   curl -L -o master.zip https://github.com/mobluse/coderdojo-raspbian-sv/archive/master.zip
 fi
