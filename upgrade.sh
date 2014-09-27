@@ -1,7 +1,7 @@
 #!/bin/sh
 cd
 sudo cp /boot/config.txt /boot/config.org.txt
-if [! -f master.zip ]; then
+if [ ! -f master.zip ]; then
   curl -L -o master.zip https://github.com/mobluse/coderdojo-raspbian-sv/archive/master.zip
 fi
 sudo unzip -jo master.zip coderdojo-raspbian-sv-master/boot/config.txt -d /boot
