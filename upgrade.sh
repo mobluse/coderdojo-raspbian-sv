@@ -11,7 +11,8 @@ cd
 #rm -rf mcpi
 #wget -qO- https://s3.amazonaws.com/assets.minecraft.net/pi/minecraft-pi-0.1.1.tar.gz | bsdtar -xvf- -C ~
 dirs=$(find /opt/minecraft-pi/ -type d | sed 's|^/opt/minecraft-pi|mcpi|'); for dir in $dirs; do mkdir $dir; done
-dirs=$(find /opt/minecraft-pi/ -type f | sed 's|^/opt/minecraft-pi||'); for dir in $dirs; do ln -sf '/opt/minecraft-pi'$dir 'mcpi'$dir; done
+dirs=$(find /opt/minecraft-pi/ -type f | sed 's|^/opt/minecraft-pi||'); for dir in $dirs; 
+do ln -sf '/opt/minecraft-pi'$dir 'mcpi'$dir; done
 
 # Download Python samples
 echo -e "\n\033[36m\033[1mDownloading Python samples...\033[00m\n"
