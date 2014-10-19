@@ -30,7 +30,7 @@ http://www.raspberrypi.org/forums/viewtopic.php?f=77&t=62781
 
 First you install NOOBS on an SD-card. You can use Windows or Mac OS X for this, but below is shown for Raspbian Linux.
 
-The next three paragraphs may be skipped if you have a new, blank SD-card.
+The next two paragraphs may be skipped if you have a new, blank SD-card.
 
 Use this to list partitions:  
 sudo fdisk -l
