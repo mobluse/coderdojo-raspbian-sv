@@ -45,7 +45,9 @@ Remove and insert the USB SD-card reader/writer in order to mount automatically.
 mount | grep -i sde1
 
 Stream [NOOBS](http://www.raspberrypi.org/downloads/) down to the SD-card using:  
-wget -qO- http://downloads.raspberrypi.org/NOOBS_latest | bsdtar -xvf- -C /media/dojopi1/
+wget -qO- http://downloads.raspberrypi.org/NOOBS_latest | bsdtar -xvf- -C /media/dojopi1/  
+alternatively:  
+curl -sL http://downloads.raspberrypi.org/NOOBS_latest | bsdtar -xvf- -C /media/dojopi1/
 
 Those who installed NOOBS using other OS continue here.
 
