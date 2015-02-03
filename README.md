@@ -56,4 +56,4 @@ Boot with keyboard, mouse, and screen. After boot use 1, 2, 3, and 4 to select H
 Configure using Raspi-Config (starts automatically on first boot). Switch on SSH. In the future this configuration should be built-in to the script.
 
 Install the rest of the programs by using this oneliner in the home directory (requires network):  
-curl -L -o master.zip https://github.com/mobluse/coderdojo-raspbian-sv/archive/master.zip; unzip -jo master.zip coderdojo-raspbian-sv-master/upgrade.sh; . upgrade.sh
+curl -Lo master.zip https://github.com/mobluse/coderdojo-raspbian-sv/archive/master.zip; unzip -jo master.zip coderdojo-raspbian-sv-master/upgrade.sh; . upgrade.sh
