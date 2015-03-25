@@ -1,0 +1,4 @@
+#!/bin/sh
+tvservice -o
+tvservice --sdtvon='PAL 4:3'
+/opt/vc/src/hello_pi/hello_tiger/hello_tiger.bin

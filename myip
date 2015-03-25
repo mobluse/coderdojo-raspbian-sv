@@ -1,0 +1,2 @@
+#!/bin/sh
+espeak -v sv "$(hostname -I | sed 's/\./ punkt /g')" 2> /dev/null

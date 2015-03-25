@@ -1,0 +1,8 @@
+#!/bin/sh
+echo Före:
+df -h
+sudo apt-get -y autoremove > /dev/null
+sudo apt-get clean
+echo
+echo Efter:
+df -h

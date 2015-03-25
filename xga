@@ -1,0 +1,4 @@
+#!/bin/sh
+tvservice -o
+tvservice --explicit='DMT 16 HDMI'
+/opt/vc/src/hello_pi/hello_tiger/hello_tiger.bin
