@@ -10,7 +10,7 @@ sudo unzip -jo master.zip coderdojo-raspbian-sv-master/boot/config.txt -d /boot
 rm master.zip
 sudo apt-get update
 sudo apt-get -y upgrade
-sudo apt-get -y install bsdtar dosfstools links rhino rlwrap tightvncserver xrdp avahi-daemon avahi-autoipd freepats
+sudo apt-get -y install bsdtar dosfstools links rhino rlwrap tightvncserver xrdp avahi-daemon avahi-autoipd freepats gpm espeak
 
 # See http://pi.minecraft.net/ & http://www.minecraftforum.net/forum/216-minecraft-pi-edition/
 #rm -rf mcpi
