@@ -1,0 +1,3 @@
+#!/bin/sh
+rlwrap java -cp /opt/minecraft-pi/api/java/\*:/usr/share/java/js.jar org.mozilla.javascript.tools.shell.Main
+#rlwrap java -cp /opt/minecraft-pi/api/java/McPi.jar:/opt/minecraft-pi/api/java/McPiDemos.jar:/usr/share/java/js.jar org.mozilla.javascript.tools.shell.Main

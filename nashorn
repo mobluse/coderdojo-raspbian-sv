@@ -1,0 +1,2 @@
+#!/bin/sh
+rlwrap /usr/lib/jvm/jdk-8-oracle-arm-vfp-hflt/bin/jjs -cp /opt/minecraft-pi/api/java/McPi.jar:/opt/minecraft-pi/api/java/McPiDemos.jar
