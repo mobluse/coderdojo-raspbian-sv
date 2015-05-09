@@ -30,26 +30,143 @@ http://www.raspberrypi.org/forums/viewtopic.php?f=77&t=62781
 
 First you install NOOBS on an SD-card. You can use Windows or Mac OS X for this, but below is shown for Raspbian Linux.
 
-The next two paragraphs may be skipped if you have a new, blank SD-card.
+Skip to next heading if you have a new, blank SD-card.
 
 Use this to list partitions:  
 sudo fdisk -l
 
-Use Parted or FDisk to remove all partitions from the SD-card you want to format and create a new, bootable W95 FAT32 (LBA) partition, see [this guide](http://qdosmsq.dunbar-it.co.uk/blog/2013/06/noobs-for-raspberry-pi/).
+Use Parted or FDisk to remove all partitions from the SD-card you want to format and create a new, bootable W95 FAT32 (LBA) partition, see [this guide](http://qdosmsq.dunbar-it.co.uk/blog/2013/06/noobs-for-raspberry-pi/) or check this example:
+
+    $ sudo fdisk /dev/sda # Change sda to your device found using fdisk-command above.
+
+    Command (m for help): d  
+    Partition number (1-6): 1
+    
+    Command (m for help): d  
+    Partition number (1-6): 2
+    
+    Command (m for help): d  
+    Selected partition 3
+    
+    Command (m for help): d  
+    No partition is defined yet!
+    
+    Command (m for help): p
+    
+    Disk /dev/sda: 15.9 GB, 15931539456 bytes  
+    4 heads, 16 sectors/track, 486192 cylinders, total 31116288 sectors  
+    Units = sectors of 1 * 512 = 512 bytes  
+    Sector size (logical/physical): 512 bytes / 512 bytes  
+    I/O size (minimum/optimal): 512 bytes / 512 bytes  
+    Disk identifier: 0x000825fe  
+    
+       Device Boot      Start         End      Blocks   Id  System
+
+    Command (m for help): n  
+    Partition type:
+       p   primary (0 primary, 0 extended, 4 free)  
+       e   extended  
+    Select (default p): p  
+    Partition number (1-4, default 1): 1  
+    Using default value 1  
+    First sector (2048-31116287, default 2048):  
+    Using default value 2048  
+    Last sector, +sectors or +size{K,M,G} (2048-31116287, default 31116287):  
+    Using default value 31116287
+    
+    Command (m for help): p
+    
+    Disk /dev/sda: 15.9 GB, 15931539456 bytes  
+    4 heads, 16 sectors/track, 486192 cylinders, total 31116288 sectors  
+    Units = sectors of 1 * 512 = 512 bytes  
+    Sector size (logical/physical): 512 bytes / 512 bytes  
+    I/O size (minimum/optimal): 512 bytes / 512 bytes  
+    Disk identifier: 0x000825fe
+    
+       Device Boot      Start         End      Blocks   Id  System  
+    /dev/sda1            2048    31116287    15557120   83  Linux  
+    
+    Command (m for help): t  
+    Selected partition 1  
+    Hex code (type L to list codes): l
+    
+     0  Empty  
+     1  FAT12  
+     2  XENIX root      39  Plan 9          83  Linux  
+     3  XENIX usr  
+     4  FAT16 <32M      40  Venix 80286     85  Linux extended  
+     5  Extended  
+     6  FAT16  
+     7  HPFS/NTFS/exFAT  
+     8  AIX  
+     9  AIX bootable  
+     a  OS/2 Boot Manag  
+     b  W95 FAT32  
+     c  W95 FAT32 (LBA)  
+     e  W95 FAT16 (LBA)  
+     f  W95 Ext'd (LBA)  
+    Hex code (type L to list codes): c  
+    Changed system type of partition 1 to c (W95 FAT32 (LBA))
+    
+    Command (m for help): p
+    
+    Disk /dev/sda: 15.9 GB, 15931539456 bytes  
+    4 heads, 16 sectors/track, 486192 cylinders, total 31116288 sectors  
+    Units = sectors of 1 * 512 = 512 bytes  
+    Sector size (logical/physical): 512 bytes / 512 bytes  
+    I/O size (minimum/optimal): 512 bytes / 512 bytes  
+    Disk identifier: 0x000825fe
+    
+       Device Boot      Start         End      Blocks   Id  System  
+    /dev/sda1            2048    31116287    15557120    c  W95 FAT32 (LBA)
+    
+    Command (m for help): a  
+    Partition number (1-4): 1
+    
+    Command (m for help): p
+    
+    Disk /dev/sda: 15.9 GB, 15931539456 bytes  
+    4 heads, 16 sectors/track, 486192 cylinders, total 31116288 sectors  
+    Units = sectors of 1 * 512 = 512 bytes  
+    Sector size (logical/physical): 512 bytes / 512 bytes  
+    I/O size (minimum/optimal): 512 bytes / 512 bytes  
+    Disk identifier: 0x000825fe
+    
+       Device Boot      Start         End      Blocks   Id  System  
+    /dev/sda1   *        2048    31116287    15557120    c  W95 FAT32 (LBA)
+    
+    Command (m for help): w  
+    The partition table has been altered!
+    
+    Calling ioctl() to re-read partition table.
+    
+    WARNING: If you have created or modified any DOS 6.x  
+    partitions, please see the fdisk manual page for additional  
+    information.
+    Syncing disks.
+
+End of example.
 
 Format and name the SD-card:  
-sudo mkdosfs -n dojopi1 -F 32 -I /dev/sde1  
-(Change sde1 to your partition and the name dojopi1 to what you like.)
+sudo mkdosfs -n dojopi1 -F 32 -I /dev/sda1  
+(Change sda1 to your partition and the name dojopi1 to what you like.)
 
 Remove and insert the USB SD-card reader/writer in order to mount automatically. Use this to find out where it is mounted:  
-mount | grep -i sde1
+mount | grep -i sda1
 
 Stream [NOOBS](http://www.raspberrypi.org/downloads/) down to the SD-card using:  
 wget -qO- http://downloads.raspberrypi.org/NOOBS_latest | bsdtar -xvf- -C /media/dojopi1/  
 alternatively:  
 curl -sL http://downloads.raspberrypi.org/NOOBS_latest | bsdtar -xvf- -C /media/dojopi1/
+alternatively:  
+    cd /media/dojopi1/
+    curl -Lo NOOBS_latest.torrent http://downloads.raspberrypi.org/NOOBS_latest.torrent
+    ctorrent NOOBS_latest.torrent
+    rm NOOBS_latest.torrent
+    unzip NOOBS_v1_4_0.zip
+    rm NOOBS_v1_4_0.zip
 
-Those who installed NOOBS using other OS continue here.
+###Those who installed NOOBS using other OS continue here###
 
 Boot with keyboard, mouse, and screen. After boot use 1, 2, 3, and 4 to select HDMI, HDMI Safe, PAL, and NTSC, respectively. If you need to select video out again, press and hold Shift during boot. Install Raspbian from NOOBS.  
 
