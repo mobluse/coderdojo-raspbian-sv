@@ -156,13 +156,11 @@ Remove and insert the USB SD-card reader/writer in order to mount automatically.
 
     mount | grep -i sda1  
 
-Stream [NOOBS](http://www.raspberrypi.org/downloads/) down to the SD-card using:  
-
-    wget -qO- http://downloads.raspberrypi.org/NOOBS_latest | bsdtar -xvf- -C /media/dojopi1/  
-alternatively:  
+Stream [NOOBS](http://www.raspberrypi.org/downloads/) down to the SD-card using:
 
     curl -sL http://downloads.raspberrypi.org/NOOBS_latest | bsdtar -xvf- -C /media/dojopi1/  
-alternatively:  
+alternatively:
+
     cd /media/dojopi1/  
     curl -Lo NOOBS_latest.torrent http://downloads.raspberrypi.org/NOOBS_latest.torrent  
     ctorrent NOOBS_latest.torrent  
@@ -176,6 +174,6 @@ Boot with keyboard, mouse, and screen. After boot use 1, 2, 3, and 4 to select H
 
 Configure using Raspi-Config (starts automatically on first boot). Switch on SSH. In the future this configuration should be built-in to the upgrade.sh-script.
 
-Install the rest of the programs by using this oneliner in the home directory (requires network):  
+Install the rest of the programs by using this oneliner in the home directory (requires network):
 
     cd; git clone https://github.com/mobluse/coderdojo-raspbian-sv.git; . ~/coderdojo-raspbian-sv/upgrade.sh
