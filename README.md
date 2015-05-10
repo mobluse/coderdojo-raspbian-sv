@@ -163,7 +163,6 @@ alternatively:
 
     curl -sL http://downloads.raspberrypi.org/NOOBS_latest | bsdtar -xvf- -C /media/dojopi1/  
 alternatively:  
-
     cd /media/dojopi1/  
     curl -Lo NOOBS_latest.torrent http://downloads.raspberrypi.org/NOOBS_latest.torrent  
     ctorrent NOOBS_latest.torrent  
@@ -178,7 +177,5 @@ Boot with keyboard, mouse, and screen. After boot use 1, 2, 3, and 4 to select H
 Configure using Raspi-Config (starts automatically on first boot). Switch on SSH. In the future this configuration should be built-in to the upgrade.sh-script.
 
 Install the rest of the programs by using this oneliner in the home directory (requires network):  
-
-    <strike>curl -Lo master.zip https://github.com/mobluse/coderdojo-raspbian-sv/archive/master.zip; unzip -jo master.zip coderdojo-raspbian-sv-master/upgrade.sh; . upgrade.sh</strike>  
 
     cd; git clone https://github.com/mobluse/coderdojo-raspbian-sv.git; . ~/coderdojo-raspbian-sv/upgrade.sh
