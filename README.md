@@ -33,11 +33,12 @@ First you install NOOBS on an SD-card. You can use Windows or Mac OS X for this,
 Skip to next heading if you have a new, blank SD-card.
 
 Use this to list partitions:  
-    sudo fdisk -l
+
+    sudo fdisk -l  
 
 Use Parted or FDisk to remove all partitions from the SD-card you want to format and create a new, bootable W95 FAT32 (LBA) partition, see [this guide](http://qdosmsq.dunbar-it.co.uk/blog/2013/06/noobs-for-raspberry-pi/) or check this example:
 
-    $ sudo fdisk /dev/sda # Change sda to your device found using fdisk-command above.
+    $ sudo fdisk /dev/sda # Change sda to your device found using fdisk-command above.  
 
     Command (m for help): d  
     Partition number (1-6): 1
@@ -142,8 +143,8 @@ Use Parted or FDisk to remove all partitions from the SD-card you want to format
     
     WARNING: If you have created or modified any DOS 6.x  
     partitions, please see the fdisk manual page for additional  
-    information.
-    Syncing disks.
+    information.  
+    Syncing disks.  
 
 End of example.
 
@@ -152,19 +153,23 @@ Format and name the SD-card:
 (Change sda1 to your partition and the name dojopi1 to what you like.)
 
 Remove and insert the USB SD-card reader/writer in order to mount automatically. Use this to find out where it is mounted:  
-    mount | grep -i sda1
+
+    mount | grep -i sda1  
 
 Stream [NOOBS](http://www.raspberrypi.org/downloads/) down to the SD-card using:  
+
     wget -qO- http://downloads.raspberrypi.org/NOOBS_latest | bsdtar -xvf- -C /media/dojopi1/  
 alternatively:  
+
     curl -sL http://downloads.raspberrypi.org/NOOBS_latest | bsdtar -xvf- -C /media/dojopi1/  
 alternatively:  
+
     cd /media/dojopi1/  
     curl -Lo NOOBS_latest.torrent http://downloads.raspberrypi.org/NOOBS_latest.torrent  
     ctorrent NOOBS_latest.torrent  
     rm NOOBS_latest.torrent  
     unzip NOOBS_v1_4_0.zip  
-    rm NOOBS_v1_4_0.zip
+    rm NOOBS_v1_4_0.zip  
 
 ###Those who installed NOOBS using other OS continue here###
 
@@ -173,5 +178,7 @@ Boot with keyboard, mouse, and screen. After boot use 1, 2, 3, and 4 to select H
 Configure using Raspi-Config (starts automatically on first boot). Switch on SSH. In the future this configuration should be built-in to the upgrade.sh-script.
 
 Install the rest of the programs by using this oneliner in the home directory (requires network):  
+
     <strike>curl -Lo master.zip https://github.com/mobluse/coderdojo-raspbian-sv/archive/master.zip; unzip -jo master.zip coderdojo-raspbian-sv-master/upgrade.sh; . upgrade.sh</strike>  
+
     cd; git clone https://github.com/mobluse/coderdojo-raspbian-sv.git; . ~/coderdojo-raspbian-sv/upgrade.sh
