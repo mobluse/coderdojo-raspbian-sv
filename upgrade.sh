@@ -13,7 +13,7 @@ sudo cp ~/coderdojo-raspbian-sv/boot/config.txt /boot
 sudo apt-get update
 #sudo apt-get -y upgrade
 sudo apt-get -y dist-upgrade
-sudo apt-get -y install bsdtar dosfstools ntfs-3g links rhino rlwrap tightvncserver xrdp avahi-daemon avahi-autoipd freepats gpm espeak
+sudo apt-get -y install bsdtar dosfstools ntfs-3g links rhino icedtea-plugin rlwrap raspberrypi-net-mods tightvncserver xrdp avahi-daemon avahi-autoipd freepats espeak gpm
 
 # See http://pi.minecraft.net/ & http://www.minecraftforum.net/forum/216-minecraft-pi-edition/
 #rm -rf mcpi
