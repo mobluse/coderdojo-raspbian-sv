@@ -3,14 +3,17 @@ cd
 if [ ! -f /boot/config.org.txt ]; then
   sudo cp /boot/config.txt /boot/config.org.txt
 fi
-if [ ! -f master.zip ]; then
-  curl -L -o master.zip https://github.com/mobluse/coderdojo-raspbian-sv/archive/master.zip
-fi
-sudo unzip -jo master.zip coderdojo-raspbian-sv-master/boot/config.txt -d /boot
-rm master.zip
+#if [ ! -f master.zip ]; then
+#  curl -L -o master.zip https://github.com/mobluse/coderdojo-raspbian-sv/archive/master.zip
+#fi
+#sudo unzip -jo master.zip coderdojo-raspbian-sv-master/boot/config.txt -d /boot
+sudo cp ~/coderdojo-raspbian-sv/boot/config.txt /boot
+#rm master.zip
+#~/coderdojo-raspbian-sv/update
 sudo apt-get update
-sudo apt-get -y upgrade
-sudo apt-get -y install bsdtar dosfstools links rhino rlwrap tightvncserver xrdp avahi-daemon avahi-autoipd freepats gpm espeak
+#sudo apt-get -y upgrade
+sudo apt-get -y dist-upgrade
+sudo apt-get -y install bsdtar dosfstools ntfs-3g links rhino rlwrap tightvncserver xrdp avahi-daemon avahi-autoipd freepats gpm espeak
 
 # See http://pi.minecraft.net/ & http://www.minecraftforum.net/forum/216-minecraft-pi-edition/
 #rm -rf mcpi
