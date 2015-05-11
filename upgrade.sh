@@ -48,8 +48,7 @@ fi
 if [ ! -f ~/Desktop/BYOB.desktop ]; then
   wget https://dl.dropbox.com/s/zgkq2jw9o9wbava/installBYOB.sh
   sudo bash installBYOB.sh
-  rm -f BYOB-Dev-tpr.changes
-  rm -f BYOB-Dev-tpr.image
+  rm -f BYOB-Pi.image
   rm -f byoblib.tgz
 fi
 
