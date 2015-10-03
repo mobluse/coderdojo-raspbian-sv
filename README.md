@@ -51,14 +51,14 @@ Skip to next heading if you have a new, blank SD-card.
 Use this to list partitions:  
 
     sudo fdisk -l
-    umount /dev/sda1 # Change sda1 to the device you will use.
 
 Use Parted or FDisk to remove all partitions from the SD-card you want to 
 format and create a new, bootable W95 FAT32 (LBA) partition, see 
 [this guide](http://qdosmsq.dunbar-it.co.uk/blog/2013/06/noobs-for-raspberry-pi/) 
 or check this example:
 
-    $ sudo fdisk /dev/sda # Change sda to your device found using fdisk-command above.  
+    $ umount /dev/sda1 # Change sda1 to the device you will use.
+    $ sudo fdisk /dev/sda  
 
     Command (m for help): d  
     Partition number (1-6): 1
@@ -169,6 +169,7 @@ or check this example:
 End of example.
 
 Format and name the SD-card:  
+
     sudo mkdosfs -n dojopi1 -F 32 -I /dev/sda1  
 (You may need to do `umount /dev/sda1` before. Change sda1 to your partition and the name dojopi1 to what you like.)
 
