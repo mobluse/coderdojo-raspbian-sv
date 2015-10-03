@@ -50,7 +50,8 @@ Skip to next heading if you have a new, blank SD-card.
 
 Use this to list partitions:  
 
-    sudo fdisk -l  
+    sudo fdisk -l
+    umount /dev/sda1 # Change sda1 to the device you will use.
 
 Use Parted or FDisk to remove all partitions from the SD-card you want to 
 format and create a new, bootable W95 FAT32 (LBA) partition, see 
@@ -169,7 +170,7 @@ End of example.
 
 Format and name the SD-card:  
     sudo mkdosfs -n dojopi1 -F 32 -I /dev/sda1  
-(Change sda1 to your partition and the name dojopi1 to what you like.)
+(You may need to do `umount /dev/sda1` before. Change sda1 to your partition and the name dojopi1 to what you like.)
 
 Remove and insert the USB SD-card reader/writer in order to mount automatically. Use this to find out where it is mounted:  
 
