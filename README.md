@@ -43,7 +43,7 @@ http://www.raspberrypi.org/forums/viewtopic.php?f=77&t=62781
 
 ##Installation##
 
-First you install NOOBS on an SD-card. You can use Windows or Mac OS X for 
+First you unpack NOOBS on an SD-card. You can use Windows or Mac OS X for 
 this, but below is shown for Raspbian Linux.
 
 Skip to next heading if you have a new, blank SD-card.
@@ -179,25 +179,25 @@ Remove and insert the USB SD-card reader/writer in order to mount automatically.
 
 Stream [NOOBS](http://www.raspberrypi.org/downloads/) down to the SD-card using:
 
-    curl -sL http://downloads.raspberrypi.org/NOOBS_latest | bsdtar -xvf- -C /media/dojopi1/  
+    curl -sL http://downloads.raspberrypi.org/NOOBS_latest | bsdtar -xvf- -C /media/pi/dojopi1/  
 alternatively:
 
-    cd /media/dojopi1/  
+    cd /media/pi/dojopi1/  
     curl -Lo NOOBS_latest.torrent http://downloads.raspberrypi.org/NOOBS_latest.torrent  
-    ctorrent NOOBS_latest.torrent  
+    ctorrent -p 51414 NOOBS_latest.torrent # Change 51414 to your listen port.  
     rm NOOBS_latest.torrent  
-    unzip NOOBS_v1_4_0.zip  
-    rm NOOBS_v1_4_0.zip  
+    unzip NOOBS_v1_4_2.zip  
+    rm NOOBS_v1_4_2.zip  
 
-###Those who installed NOOBS using other OS continue here###
+###Those who created a NOOBS SD-card using other OS continue here###
 
-Boot with keyboard, mouse, and screen. After boot use 1, 2, 3, and 4 to 
+Boot with NOOBS SD-card, keyboard, mouse, and screen. After boot use 1, 2, 3, and 4 to 
 select HDMI, HDMI Safe, PAL, and NTSC, respectively. If you need to select 
 video out again, press and hold Shift during boot. Install Raspbian from 
 NOOBS.  
 
-Configure using Raspi-Config (starts automatically on first boot). Switch on 
-SSH. In the future this configuration should be built-in to the 
+Configure using Raspberry Pi Configuration or Raspi-Config. Check that SSH is on.
+In the future this configuration should be built-in to the 
 upgrade.sh-script.
 
 Install the rest of the programs by using this oneliner in the home 
