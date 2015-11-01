@@ -41,7 +41,7 @@ http://www.raspberrypi.org/forums/viewtopic.php?p=552802#p552802
 See "Installing BYOB in Raspbian":  
 http://www.raspberrypi.org/forums/viewtopic.php?f=77&t=62781
 
-##Installation##
+##Install##
 
 First you unpack NOOBS on an SD-card. You can use Windows or Mac OS X for 
 this, but below is shown for Raspbian Linux.
@@ -172,6 +172,8 @@ Format and name the SD-card:
 
     sudo mkdosfs -n dojopi1 -F 32 -I /dev/sda1  
 (You may need to do `umount /dev/sda1` before. Change sda1 to your partition and the name dojopi1 to what you like.)
+
+###Unpack NOOBS to SD-card###
 
 Remove and insert the USB SD-card reader/writer in order to mount automatically. Use this to find out where it is mounted:  
 
