@@ -1,8 +1,9 @@
 #!/bin/sh
 echo Före:
 df -h
-sudo apt-get -y autoremove > /dev/null
-sudo apt-get clean
+sudo apt-get --yes autoremove > /dev/null
+sudo apt-get --yes autoclean > /dev/null
+sudo apt-get --yes clean
 echo
 echo Efter:
 df -h
