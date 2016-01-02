@@ -41,23 +41,24 @@ http://www.raspberrypi.org/forums/viewtopic.php?p=552802#p552802
 See "Installing BYOB in Raspbian":  
 http://www.raspberrypi.org/forums/viewtopic.php?f=77&t=62781
 
-##Installation##
+##Install##
 
-First you install NOOBS on an SD-card. You can use Windows or Mac OS X for 
+First you unpack NOOBS on an SD-card. You can use Windows or Mac OS X for 
 this, but below is shown for Raspbian Linux.
 
 Skip to next heading if you have a new, blank SD-card.
 
 Use this to list partitions:  
 
-    sudo fdisk -l  
+    sudo fdisk -l
 
 Use Parted or FDisk to remove all partitions from the SD-card you want to 
 format and create a new, bootable W95 FAT32 (LBA) partition, see 
 [this guide](http://qdosmsq.dunbar-it.co.uk/blog/2013/06/noobs-for-raspberry-pi/) 
 or check this example:
 
-    $ sudo fdisk /dev/sda # Change sda to your device found using fdisk-command above.  
+    $ umount /dev/sda1 # Change sda1 to the device you will use.
+    $ sudo fdisk /dev/sda  
 
     Command (m for help): d  
     Partition number (1-6): 1
@@ -168,34 +169,37 @@ or check this example:
 End of example.
 
 Format and name the SD-card:  
+
     sudo mkdosfs -n dojopi1 -F 32 -I /dev/sda1  
-(Change sda1 to your partition and the name dojopi1 to what you like.)
+(You may need to do `umount /dev/sda1` before. Change sda1 to your partition and the name dojopi1 to what you like.)
+
+###Unpack NOOBS to SD-card###
 
 Remove and insert the USB SD-card reader/writer in order to mount automatically. Use this to find out where it is mounted:  
 
     mount | grep -i sda1  
 
-Stream [NOOBS](http://www.raspberrypi.org/downloads/) down to the SD-card using:
+Stream [NOOBS](http://www.raspberrypi.org/downloads/) down to the SD-card using this for small NOOBS files:
 
-    curl -sL http://downloads.raspberrypi.org/NOOBS_latest | bsdtar -xvf- -C /media/dojopi1/  
-alternatively:
+    curl -sL http://downloads.raspberrypi.org/NOOBS_latest | bsdtar -xvf- -C /media/pi/dojopi1/  
+alternatively this for big NOOBS files:
 
-    cd /media/dojopi1/  
+    cd /media/pi/dojopi1/  
     curl -Lo NOOBS_latest.torrent http://downloads.raspberrypi.org/NOOBS_latest.torrent  
-    ctorrent NOOBS_latest.torrent  
+    ctorrent -p 51414 NOOBS_latest.torrent # Change 51414 to your listen port.  
     rm NOOBS_latest.torrent  
-    unzip NOOBS_v1_4_0.zip  
-    rm NOOBS_v1_4_0.zip  
+    unzip NOOBS_v1_4_2.zip  
+    rm NOOBS_v1_4_2.zip  
 
-###Those who installed NOOBS using other OS continue here###
+###Those who created a NOOBS SD-card using other OS continue here###
 
-Boot with keyboard, mouse, and screen. After boot use 1, 2, 3, and 4 to 
+Boot with NOOBS SD-card, keyboard, mouse, and screen. After boot use 1, 2, 3, and 4 to 
 select HDMI, HDMI Safe, PAL, and NTSC, respectively. If you need to select 
 video out again, press and hold Shift during boot. Install Raspbian from 
 NOOBS.  
 
-Configure using Raspi-Config (starts automatically on first boot). Switch on 
-SSH. In the future this configuration should be built-in to the 
+Configure using Raspberry Pi Configuration or Raspi-Config. Check that SSH is on.
+In the future this configuration should be built-in to the 
 upgrade.sh-script.
 
 Install the rest of the programs by using this oneliner in the home 
