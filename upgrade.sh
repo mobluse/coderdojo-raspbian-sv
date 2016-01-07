@@ -53,6 +53,9 @@ if [ ! -f ~/Desktop/BYOB.desktop ]; then
   rm -f byoblib.tgz
 fi
 
+# Download Whiskers:
+curl -L -o Whiskers.image https://sites.google.com/site/filedownloader123/files/Scratch.image?attredirects=0&d=1
+# Start with: scratch.old --image Whiskers.image
 
 # See http://www.raspberrypi.org/forums/viewtopic.php?f=78&t=69420&p=551155
 if [ ! -f /usr/local/bin/x64 ]; then
