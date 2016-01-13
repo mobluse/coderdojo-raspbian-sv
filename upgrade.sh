@@ -13,9 +13,9 @@ sudo cp ~/coderdojo-raspbian-sv/boot/config.txt /boot
 sudo apt-get update
 #sudo apt-get -y upgrade
 sudo apt-get -y dist-upgrade
-sudo apt-get -y install bsdtar dosfstools ntfs-3g links rhino icedtea-plugin rlwrap raspberrypi-net-mods\
-  tightvncserver xrdp avahi-daemon avahi-autoipd freepats espeak gpm
-
+sudo apt-get -y install bsdtar links rhino icedtea-plugin rlwrap \
+  tightvncserver xrdp avahi-autoipd espeak gpm
+# Removed: avahi-daemon dosfstools freepats ntfs-3g raspberrypi-net-mods
 # See http://pi.minecraft.net/ & http://www.minecraftforum.net/forum/216-minecraft-pi-edition/
 #rm -rf mcpi
 #wget -qO- https://s3.amazonaws.com/assets.minecraft.net/pi/minecraft-pi-0.1.1.tar.gz | bsdtar -xvf- -C ~
@@ -54,8 +54,8 @@ if [ ! -f ~/Desktop/BYOB.desktop ]; then
 fi
 
 # Download Whiskers, see https://www.raspberrypi.org/forums/viewtopic.php?p=838089
-curl -L -o Whiskers.image https://sites.google.com/site/filedownloader123/files/Scratch.image?attredirects=0&d=1
-sudo mv Whiskers.image /usr/share/scratch/ 
+wget -O Whiskers.image 'https://sites.google.com/site/filedownloader123/files/Scratch.image?attredirects=0&d=1'
+sudo mv Whiskers.image /usr/share/scratch/
 # Start with: scratch.old --image /usr/share/scratch/Whiskers.image
 
 # See http://www.raspberrypi.org/forums/viewtopic.php?f=78&t=69420&p=551155
@@ -67,7 +67,7 @@ if [ ! -f /usr/local/bin/x64 ]; then
   chmod +x x64
   sudo mv x64 /usr/local/bin/
   # x64 -sdlbitdepth 8
-  # Save settings within VICE (F12/Settings management/Save current settings), then start with 
+  # Save settings within VICE (F12/Settings management/Save current settings), then start with
   # x64
   wget 'http://c64.orbin.se/Comal 80 (1985)(Commodore)[a].crt'
   cd
