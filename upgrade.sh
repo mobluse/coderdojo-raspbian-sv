@@ -58,22 +58,6 @@ wget -O Whiskers.image 'https://sites.google.com/site/filedownloader123/files/Sc
 sudo mv Whiskers.image /usr/share/scratch/
 # Start with: scratch.old --image /usr/share/scratch/Whiskers.image
 
-# See http://www.raspberrypi.org/forums/viewtopic.php?f=78&t=69420&p=551155
-if [ ! -f /usr/local/bin/x64 ]; then
-  wget -O c64.zip 'https://docs.google.com/uc?authuser=0&id=0B51Q7dpulGC8dEVtTk5ReFBLX0U&export=download'
-  unzip c64.zip
-  cd ~/c64
-  sudo mv vice /usr/local/lib/
-  chmod +x x64
-  sudo mv x64 /usr/local/bin/
-  # x64 -sdlbitdepth 8
-  # Save settings within VICE (F12/Settings management/Save current settings), then start with
-  # x64
-  wget 'http://c64.orbin.se/Comal 80 (1985)(Commodore)[a].crt'
-  cd
-  rm c64.zip
-fi
-
 # See http://www.raspberrypi.org/forums/viewtopic.php?p=534518#p534518
 if [ ! -f ~/abc80sim-2.1/abcdir/masken.bas ]; then
   wget http://df.lth.se.orbin.se/~mikaelb/abc/80/abc80sim-2.1-raspi.tar.gz
@@ -83,4 +67,19 @@ if [ ! -f ~/abc80sim-2.1/abcdir/masken.bas ]; then
   cd ~/abc80sim-2.1/abcdir/
   wget http://df.lth.se.orbin.se/~mikaelb/abc/80/masken.bas
   cd
+fi
+
+# See http://www.raspberrypi.org/forums/viewtopic.php?f=78&t=69420&p=551155
+if [ ! -f /usr/local/bin/x64 ]; then
+  wget -O vice_2.4.20-1_armhf.deb 'https://docs.google.com/uc?authuser=0&id=0B51Q7dpulGC8dEVtTk5ReFBLX0U&export=download'
+  sudo dpkg -i vice_2.4.20-1_armhf.deb
+  sudo apt-get -f install
+  mkdir ~/c64
+  cd ~/c64
+  # x64 -sdlbitdepth 8
+  # Save settings within VICE (F12/Settings management/Save current settings), then start with
+  # x64
+  wget 'http://c64.orbin.se/Comal 80 (1985)(Commodore)[a].crt'
+  cd
+  rm vice_2.4.20-1_armhf.deb
 fi
