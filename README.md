@@ -43,7 +43,10 @@ http://www.raspberrypi.org/forums/viewtopic.php?f=77&t=62781
 
 ##Install##
 
-First you unpack NOOBS on an SD-card. You can use Windows or Mac OS X for 
+One way is to install Raspbian using an image, see
+[this guide](https://www.raspberrypi.org/documentation/installation/installing-images/).
+
+Another way is to use NOOBS. First you unpack NOOBS on an SD-card. You can use Windows or Mac OS X for 
 this, but below is shown for Raspbian Linux.
 
 Skip to next heading if you have a new, blank SD-card.
@@ -198,9 +201,10 @@ select HDMI, HDMI Safe, PAL, and NTSC, respectively. If you need to select
 video out again, press and hold Shift during boot. Install Raspbian from 
 NOOBS.  
 
-Configure using Raspberry Pi Configuration or Raspi-Config. Check that SSH is on.
-In the future this configuration should be built-in to the 
-upgrade.sh-script.
+##Install the extra programs##
+
+Configure using Raspberry Pi Configuration (RC_GUI) or Raspi-Config. Check that SSH is on.
+In the future this configuration should be built-in to the upgrade.sh-script.
 
 Install the rest of the programs by using this oneliner in the home 
 directory (requires network):
