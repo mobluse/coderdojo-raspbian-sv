@@ -739,7 +739,7 @@ gpu_mem=64
 ##
 ##     Default 700.
 ##
-arm_freq=800
+#arm_freq=800
 
 ## arm_freq_min
 ##     Minimum frequency of ARM in MHz (used for dynamic clocking).
@@ -761,7 +761,7 @@ arm_freq=800
 ##
 ##     Default 250.
 ##
-core_freq=250
+#core_freq=250
 
 ## core_freq_min
 ##     Minimum frequency of GPU processor core in MHz (used for dynamic
@@ -798,7 +798,7 @@ core_freq=250
 ##
 ##     Default 400.
 ##
-sdram_freq=400
+#sdram_freq=400
 
 ## sdram_freq_min
 ##     Minimum frequency of SDRAM in MHz (used for dynamic clocking).
@@ -859,7 +859,7 @@ sdram_freq=400
 ##     7        1.375 V (requires force_turbo=1)
 ##     8        1.4   V (requires force_turbo=1)
 ##
-over_voltage=0
+#over_voltage=0
 
 ## over_voltage_min
 ##     Minimum ARM/GPU core voltage adjust (used for dynamic clocking).
