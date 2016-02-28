@@ -378,7 +378,7 @@ sdtv_mode=2
 ##     0        Overscan Enabled (Default)
 ##     1        Overscan Disabled
 ##
-#disable_overscan=1
+disable_overscan=1
 
 ################################################################################
 ##  Framebuffer Video Settings
