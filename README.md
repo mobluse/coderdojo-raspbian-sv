@@ -15,7 +15,7 @@ Mac OS X and Ubuntu Linux. You can extract the Bonjour installation program
 from iTunes using an archive manager that handles rar-files, e.g. 7-zip. 
 Use the correct version of iTunes for your Windows! i.e. 32-bit or 64-bit. 
 The purpose of Avahi is to configure IP-numbers without a DHCP-server and to 
-be able to use names of computers without a nameserver, e.g. dojopi1.lan. 
+be able to use names of computers without a nameserver, e.g. dojopi1.local. 
 This makes it possible to connect a Raspberry Pi to a laptop with a single 
 ethernet-cable or via a simple hub. You can also switch on network sharing 
 and use the laptop's Internet connection via WiFi or 3G from the Raspberry Pi.
@@ -33,7 +33,7 @@ See "RPi VNC Server":
 http://elinux.org/RPi_VNC_Server  
 In Ubuntu Linux I use Remmina Remote Desktop Client for RDP. For Mac OS X 
 [Microsoft Remote Desktop](https://itunes.apple.com/us/app/microsoft-remote-desktop/id715768417) 
-probably works for RDP.
+probably works for RDP. RDP is built-in to Windows
 
 See "Extend Minecraft Pi Edition using JavaScript via Java":  
 http://www.raspberrypi.org/forums/viewtopic.php?p=552802#p552802
@@ -46,48 +46,49 @@ http://www.raspberrypi.org/forums/viewtopic.php?f=77&t=62781
 One way is to install Raspbian using an image, see
 [this guide](https://www.raspberrypi.org/documentation/installation/installing-images/).
 
-Another way is to use NOOBS. First you unpack NOOBS on an SD-card. You can use Windows or Mac OS X for 
-this, but below is shown for Raspbian Linux.
+Another way is to use [NOOBS](https://www.raspberrypi.org/learning/noobs-install/worksheet/).
+First you unpack NOOBS on an SD-card. You can use Windows or Mac OS X for this, but below
+is shown for Raspbian Linux.
 
 Skip to next heading if you have a new, blank SD-card.
 
 Use this to list partitions:  
 
-    sudo fdisk -l
+    sudo fdisk -l  
 
 Use Parted or FDisk to remove all partitions from the SD-card you want to 
 format and create a new, bootable W95 FAT32 (LBA) partition, see 
 [this guide](http://qdosmsq.dunbar-it.co.uk/blog/2013/06/noobs-for-raspberry-pi/) 
 or check this example:
 
-    $ umount /dev/sda1 # Change sda1 to the device you will use.
-    $ sudo fdisk /dev/sda  
+    $ umount /dev/sdx1 # Change sdx1 to the device you will use.  
+    $ sudo fdisk /dev/sdx  
 
     Command (m for help): d  
-    Partition number (1-6): 1
+    Partition number (1-6): 1  
     
     Command (m for help): d  
-    Partition number (1-6): 2
+    Partition number (1-6): 2  
     
     Command (m for help): d  
     Selected partition 3
     
     Command (m for help): d  
-    No partition is defined yet!
+    No partition is defined yet!  
     
-    Command (m for help): p
+    Command (m for help): p  
     
-    Disk /dev/sda: 15.9 GB, 15931539456 bytes  
+    Disk /dev/sdx: 15.9 GB, 15931539456 bytes  
     4 heads, 16 sectors/track, 486192 cylinders, total 31116288 sectors  
     Units = sectors of 1 * 512 = 512 bytes  
     Sector size (logical/physical): 512 bytes / 512 bytes  
     I/O size (minimum/optimal): 512 bytes / 512 bytes  
     Disk identifier: 0x000825fe  
     
-       Device Boot      Start         End      Blocks   Id  System
-
+       Device Boot      Start         End      Blocks   Id  System  
+    
     Command (m for help): n  
-    Partition type:
+    Partition type:  
        p   primary (0 primary, 0 extended, 4 free)  
        e   extended  
     Select (default p): p  
@@ -96,23 +97,23 @@ or check this example:
     First sector (2048-31116287, default 2048):  
     Using default value 2048  
     Last sector, +sectors or +size{K,M,G} (2048-31116287, default 31116287):  
-    Using default value 31116287
+    Using default value 31116287  
     
-    Command (m for help): p
+    Command (m for help): p  
     
-    Disk /dev/sda: 15.9 GB, 15931539456 bytes  
+    Disk /dev/sdx: 15.9 GB, 15931539456 bytes  
     4 heads, 16 sectors/track, 486192 cylinders, total 31116288 sectors  
     Units = sectors of 1 * 512 = 512 bytes  
     Sector size (logical/physical): 512 bytes / 512 bytes  
     I/O size (minimum/optimal): 512 bytes / 512 bytes  
-    Disk identifier: 0x000825fe
+    Disk identifier: 0x000825fe  
     
        Device Boot      Start         End      Blocks   Id  System  
-    /dev/sda1            2048    31116287    15557120   83  Linux  
+    /dev/sdx1            2048    31116287    15557120   83  Linux  
     
     Command (m for help): t  
     Selected partition 1  
-    Hex code (type L to list codes): l
+    Hex code (type L to list codes): l  
     
      0  Empty  
      1  FAT12  
@@ -130,57 +131,57 @@ or check this example:
      e  W95 FAT16 (LBA)  
      f  W95 Ext'd (LBA)  
     Hex code (type L to list codes): c  
-    Changed system type of partition 1 to c (W95 FAT32 (LBA))
+    Changed system type of partition 1 to c (W95 FAT32 (LBA))  
     
-    Command (m for help): p
+    Command (m for help): p  
     
-    Disk /dev/sda: 15.9 GB, 15931539456 bytes  
+    Disk /dev/sdx: 15.9 GB, 15931539456 bytes  
     4 heads, 16 sectors/track, 486192 cylinders, total 31116288 sectors  
     Units = sectors of 1 * 512 = 512 bytes  
     Sector size (logical/physical): 512 bytes / 512 bytes  
     I/O size (minimum/optimal): 512 bytes / 512 bytes  
-    Disk identifier: 0x000825fe
+    Disk identifier: 0x000825fe  
     
        Device Boot      Start         End      Blocks   Id  System  
-    /dev/sda1            2048    31116287    15557120    c  W95 FAT32 (LBA)
+    /dev/sdx1            2048    31116287    15557120    c  W95 FAT32 (LBA)  
     
     Command (m for help): a  
-    Partition number (1-4): 1
+    Partition number (1-4): 1  
     
-    Command (m for help): p
+    Command (m for help): p  
     
-    Disk /dev/sda: 15.9 GB, 15931539456 bytes  
+    Disk /dev/sdx: 15.9 GB, 15931539456 bytes  
     4 heads, 16 sectors/track, 486192 cylinders, total 31116288 sectors  
     Units = sectors of 1 * 512 = 512 bytes  
     Sector size (logical/physical): 512 bytes / 512 bytes  
     I/O size (minimum/optimal): 512 bytes / 512 bytes  
-    Disk identifier: 0x000825fe
+    Disk identifier: 0x000825fe  
     
        Device Boot      Start         End      Blocks   Id  System  
-    /dev/sda1   *        2048    31116287    15557120    c  W95 FAT32 (LBA)
+    /dev/sdx1   *        2048    31116287    15557120    c  W95 FAT32 (LBA)  
     
     Command (m for help): w  
-    The partition table has been altered!
+    The partition table has been altered!  
     
-    Calling ioctl() to re-read partition table.
+    Calling ioctl() to re-read partition table.  
     
     WARNING: If you have created or modified any DOS 6.x  
     partitions, please see the fdisk manual page for additional  
     information.  
-    Syncing disks.  
+    Syncing disks.    
 
 End of example.
 
 Format and name the SD-card:  
 
-    sudo mkdosfs -n dojopi1 -F 32 -I /dev/sda1  
-(You may need to do `umount /dev/sda1` before. Change sda1 to your partition and the name dojopi1 to what you like.)
+    sudo mkdosfs -n dojopi1 -F 32 -I /dev/sdx1  
+(You may need to do `umount /dev/sdx1` before. Change sdx1 to your partition and the name dojopi1 to what you like.)
 
 ###Unpack NOOBS to SD-card###
 
 Remove and insert the USB SD-card reader/writer in order to mount automatically. Use this to find out where it is mounted:  
 
-    mount | grep -i sda1  
+    mount | grep -i sdx1  
 
 Stream [NOOBS](http://www.raspberrypi.org/downloads/) down to the SD-card using this for small NOOBS files:
 
@@ -191,8 +192,13 @@ alternatively this for big NOOBS files:
     curl -Lo NOOBS_latest.torrent http://downloads.raspberrypi.org/NOOBS_latest.torrent  
     ctorrent -p 51414 NOOBS_latest.torrent # Change 51414 to your listen port.  
     rm NOOBS_latest.torrent  
-    unzip NOOBS_v1_4_2.zip  
-    rm NOOBS_v1_4_2.zip  
+    unzip NOOBS_v1_7_0.zip  
+    rm NOOBS_v1_7_0.zip  
+
+If you are going to install NOOBS on several SD-cards you may want to unzip the files to all 
+the cards before you remove the zip-file.
+
+    unzip NOOBS_v1_7_0.zip -d /media/pi/dojopi2/  
 
 ###Those who created a NOOBS SD-card using other OS continue here###
 
@@ -203,10 +209,13 @@ NOOBS.
 
 ##Install the extra programs##
 
-Configure using Raspberry Pi Configuration (RC_GUI) or Raspi-Config. Check that SSH is on.
+Configure using Raspberry Pi Configuration (RC_GUI) or RasPi-Config. Check that SSH is on.
 In the future this configuration should be built-in to the upgrade.sh-script.
 
 Install the rest of the programs by using this oneliner in the home 
 directory (requires network):
 
-    cd; git clone https://github.com/mobluse/coderdojo-raspbian-sv.git; . ~/coderdojo-raspbian-sv/upgrade.sh
+    cd; git clone https://github.com/mobluse/coderdojo-raspbian-sv.git; . ~/coderdojo-raspbian-sv/upgrade.sh  
+
+Check that sound works using e.g. Scratch -- if it doesn't, right click the speaker icon (near the clock), 
+and select Analog or HDMI.
