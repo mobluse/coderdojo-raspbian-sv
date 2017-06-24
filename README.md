@@ -1,12 +1,11 @@
-CoderDojo-Raspbian-Swedish
-==========================
+# CoderDojo-Raspbian-Swedish
 
 This script simplifies installing several similar Raspberry Pi systems.
 
 Contains the commented config.txt file for the Raspberry Pi further developed 
 for a CoderDojo in Lund, Sweden.
 
-#CoderDojo falsely accuses me for being a racist
+## News: CoderDojo falsely accuses me for being a racist
 https://politikmobil.wordpress.com/2016/08/20/coderdojo-foundation-does-not-allow-mentors-to-link-to-critique-of-the-quran-in-a-private-discussion/
 
 Also contains installation scripts for BSDTar, Avahi, TightVNC-Server, XRDP,
@@ -44,7 +43,7 @@ http://www.raspberrypi.org/forums/viewtopic.php?p=552802#p552802
 See "Installing BYOB in Raspbian":  
 http://www.raspberrypi.org/forums/viewtopic.php?f=77&t=62781
 
-##Install##
+## Install
 
 One way is to install Raspbian using an image, see
 [this guide](https://www.raspberrypi.org/documentation/installation/installing-images/).
@@ -180,7 +179,7 @@ Format and name the SD-card:
     sudo mkdosfs -n dojopi1 -F 32 -I /dev/sdx1  
 (You may need to do `umount /dev/sdx1` before. Change sdx1 to your partition and the name dojopi1 to what you like.)
 
-###Unpack NOOBS to SD-card###
+### Unpack NOOBS to SD-card
 
 Remove and insert the USB SD-card reader/writer in order to mount automatically. Use this to find out where it is mounted:  
 
@@ -203,14 +202,14 @@ the cards before you remove the zip-file.
 
     unzip NOOBS_v1_7_0.zip -d /media/pi/dojopi2/  
 
-###Those who created a NOOBS SD-card using other OS continue here###
+### Those who created a NOOBS SD-card using other OS continue here
 
 Boot with NOOBS SD-card, keyboard, mouse, and screen. After boot use 1, 2, 3, and 4 to 
 select HDMI, HDMI Safe, PAL, and NTSC, respectively. If you need to select 
 video out again, press and hold Shift during boot. Install Raspbian from 
 NOOBS.  
 
-##Install the extra programs##
+## Install the extra programs
 
 Configure using Raspberry Pi Configuration (RC_GUI) or RasPi-Config. Check that SSH is on.
 In the future this configuration should be built-in to the upgrade.sh-script.
