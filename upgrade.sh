@@ -14,7 +14,7 @@ sudo apt-get update
 #sudo apt-get -y upgrade
 sudo apt-get -y dist-upgrade
 sudo apt-get -y install bsdtar links rhino icedtea-plugin rlwrap \
-  tightvncserver xrdp avahi-autoipd espeak gpm obconf
+  tightvncserver xrdp avahi-autoipd espeak gpm obconf libjpeg8
 # Removed: avahi-daemon dosfstools freepats ntfs-3g raspberrypi-net-mods
 # See http://pi.minecraft.net/ & http://www.minecraftforum.net/forum/216-minecraft-pi-edition/
 #rm -rf mcpi
