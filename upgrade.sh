@@ -7,15 +7,15 @@ fi
 #  curl -L -o master.zip https://github.com/mobluse/coderdojo-raspbian-sv/archive/master.zip
 #fi
 #sudo unzip -jo master.zip coderdojo-raspbian-sv-master/boot/config.txt -d /boot
-sudo cp ~/coderdojo-raspbian-sv/boot/config.txt /boot
+# sudo cp ~/coderdojo-raspbian-sv/boot/config.txt /boot
 #rm master.zip
 #~/coderdojo-raspbian-sv/update
 sudo apt-get update
 #sudo apt-get -y upgrade
 sudo apt-get -y dist-upgrade
-sudo apt-get -y install bsdtar links rhino icedtea-plugin rlwrap \
-  tightvncserver xrdp avahi-autoipd espeak gpm obconf libjpeg8
-# Removed: avahi-daemon dosfstools freepats ntfs-3g raspberrypi-net-mods
+sudo apt-get -y install bsdtar links rhino rlwrap \
+  xrdp avahi-autoipd espeak gpm libjpeg8
+# Removed: avahi-daemon dosfstools freepats ntfs-3g raspberrypi-net-mods icedtea-plugin tightvncserver obconf 
 # See http://pi.minecraft.net/ & http://www.minecraftforum.net/forum/216-minecraft-pi-edition/
 #rm -rf mcpi
 #wget -qO- https://s3.amazonaws.com/assets.minecraft.net/pi/minecraft-pi-0.1.1.tar.gz | bsdtar -xvf- -C ~
