@@ -4,7 +4,7 @@ df -h
 sudo apt-get --yes autoremove > /dev/null
 sudo apt-get --yes autoclean > /dev/null
 sudo apt-get --yes clean
-sudo rm /var/log/*
+#sudo rm /var/log/*
 echo
 echo Efter:
 df -h
