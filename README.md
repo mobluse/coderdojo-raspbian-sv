@@ -5,9 +5,6 @@ This script simplifies installing several similar Raspberry Pi systems.
 Contains the commented config.txt file for the Raspberry Pi further developed 
 for a CoderDojo in Lund, Sweden.
 
-## News: CoderDojo falsely accuses me for being a racist
-https://politikmobil.wordpress.com/2016/08/20/coderdojo-foundation-does-not-allow-mentors-to-link-to-critique-of-the-quran-in-a-private-discussion/
-
 Also contains installation scripts for BSDTar, Avahi, TightVNC-Server, XRDP,
 Scratch2MCPI, Rhino, RLWrap, BYOB, Links, Commodore 64 with Comal 80, 
 ABC 80 with Snake.
